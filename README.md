@@ -13,17 +13,27 @@ We are controlling the dashgo platform using Ubuntu 18.04\ ROS Melodic.
 ```
 sudo apt install ros-melodic-serial ros-melodic-yocs-velocity-smoother 
 ```
+### Installation
+Clone the repository and build it.
+```
+mkdir ~/dasgho_ws/src -p
+cd ~/dashgo_ws/src
+git clone https://github.com/TIERS/dashgo-d1-ros.git
+cd ~/dashgo_ws
+catkin build
+source devel/setup.bash
+```
 
-### Run dashbo driver
+### Run dashgo driver
 
 First make the node executable:
 ```
-chmod +x $(find dashgo_d1/dashgo_driver/nodes/dashgo_driver.py)
+chmod +x $(find dashgo-d1-ros/dashgo_driver/nodes/dashgo_driver.py)
 ```
 
 Edit the port in the config file (first line)
 ```
-nano $(find dashgo_d1/dashgo_driver/config/my_dashgo_params.yaml)
+nano $(find dashgo-d1-ros/dashgo_driver/config/my_dashgo_params.yaml)
 ```
 
 Make sure user is in `dialout` group:
